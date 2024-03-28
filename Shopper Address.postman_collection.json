@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "ff7c9c09-c26e-4713-9d60-e9a03a98feb1",
+		"name": "Shopper Address",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33643733",
+		"_collection_link": "https://www.postman.com/spacecraft-specialist-7984735/workspace/shopperstack/collection/33643733-ff7c9c09-c26e-4713-9d60-e9a03a98feb1?action=share&source=collection_link&creator=33643733"
+	},
+	"item": [
+		{
+			"name": "Add a new address",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JWTtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"addressId\": 103,\r\n  \"buildingInfo\": \"Kapoor Buldging \",\r\n  \"city\": \"Pune\",\r\n  \"country\": \"India\",\r\n  \"landmark\": \"Kusgoan\",\r\n  \"name\": \"SIT\",\r\n  \"phone\": \"7743839339\",\r\n  \"pincode\": \"432102\",\r\n  \"state\": \"Maharashtra\",\r\n  \"streetInfo\": \"Near Childern Park\",\r\n  \"type\": \"Home\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/shoppers/{{shopperId}}/address",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"shoppers",
+						"{{shopperId}}",
+						"address"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all the addresses",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JWTtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/shoppers/{{shopperId}}/address/{{addressid}}",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"shoppers",
+						"{{shopperId}}",
+						"address",
+						"{{addressid}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a particular address by addressId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JWTtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseUrl}}/shoppers/{{shopperId}}/address/{{addressid}}",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"shoppers",
+						"{{shopperId}}",
+						"address",
+						"{{addressid}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update an added address",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JWTtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"addressId\": 103,\r\n  \"buildingInfo\": \"Kapoor\",\r\n  \"city\": \"Pune\",\r\n  \"country\": \"India\",\r\n  \"landmark\": \"Kusgoan\",\r\n  \"name\": \"SIT\",\r\n  \"phone\": \"7743839339\",\r\n  \"pincode\": \"432102\",\r\n  \"state\": \"Maharashtra\",\r\n  \"streetInfo\": \"Childern Park\",\r\n  \"type\": \"Home\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BaseUrl}}/shoppers/{{shopperId}}/address/{{addressid}}",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"shoppers",
+						"{{shopperId}}",
+						"address",
+						"{{addressid}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete an address",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{JWTtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BaseUrl}}/shoppers/{{shopperId}}/address/{{addressId}}",
+					"host": [
+						"{{BaseUrl}}"
+					],
+					"path": [
+						"shoppers",
+						"{{shopperId}}",
+						"address",
+						"{{addressId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
